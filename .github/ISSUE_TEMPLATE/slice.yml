@@ -1,0 +1,64 @@
+name: Slice
+description: Propose a scoped, verifiable unit of work
+title: "AREA-N: <short outcome>"
+labels:
+  - slice
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for work delivered as a slice. See `docs/022-slice-contract.md`.
+  - type: textarea
+    id: goal
+    attributes:
+      label: Product/technical goal
+      description: State the outcome, not just the activities.
+      placeholder: What should be true when this slice is complete?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: List the included deliverables and relevant paths or contracts.
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: Name adjacent work this slice must not absorb.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Use observable, testable criteria.
+      placeholder: |
+        - [ ] Given ..., when ..., then ...
+    validations:
+      required: true
+  - type: input
+    id: parent
+    attributes:
+      label: Parent epic
+      placeholder: "#1"
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: List only issues that block this work and explain why; write "None" if independent.
+      placeholder: "#11 - this slice requires the repository skeleton."
+  - type: textarea
+    id: security-privacy
+    attributes:
+      label: Security/privacy review
+      description: State whether review is required and why; call out data, trust-boundary, or external-input concerns.
+      placeholder: "Required/not required — rationale"
+  - type: textarea
+    id: specification
+    attributes:
+      label: Specification and open questions
+      description: Link or describe the specification; identify assumptions and unresolved decisions.
+      placeholder: "Complete or expand with /slice-bootstrap <ISSUE-NUMBER> where available."
+    validations:
+      required: true
