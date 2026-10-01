@@ -17,8 +17,9 @@ Logs and telemetry must follow [004-data-and-privacy.md](004-data-and-privacy.md
 
 Pull requests targeting `main` run CodeQL analysis for C# and GitHub Actions and
 dependency review for introduced dependency vulnerabilities. Dependency review
-fails on vulnerabilities rated low or higher; review the advisory and upgrade or
-document an explicitly approved exception rather than weakening the check.
+requires GitHub's dependency graph, which is enabled for CivicAction. It fails on
+vulnerabilities rated low or higher; review the advisory and upgrade or document
+an explicitly approved exception rather than weakening the check.
 
 Secret scanning and push protection are GitHub repository settings, not workflow
 steps. They are currently enabled for CivicAction; repository owners should
