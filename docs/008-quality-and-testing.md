@@ -4,15 +4,22 @@
 
 The solution enables nullable reference types, .NET analyzers at `latest-recommended`, and warnings-as-errors. Preserve these settings and address warnings rather than suppressing them broadly.
 
-The expected deterministic CI baseline is:
+The deterministic CI baseline runs on pull requests targeting `main` when opened,
+synchronized, or reopened. It uses .NET SDK `10.0.400` and runs:
 
 1. Restore the solution.
-2. Verify formatting with `dotnet format --verify-no-changes --severity info`.
+2. Verify formatting with
+   `dotnet format CivicAction.slnx --verify-no-changes --severity info`.
 3. Build the solution.
 4. Run the test suite.
-5. Validate the slice's PR contract.
+5. Validate the slice's PR contract with
+   `.github/scripts/validate-pr-contract.mjs`.
 
-The exact automation is established in the CI slice; until then, run the equivalent local commands from [AGENTS.md](../AGENTS.md).
+The PR contract check requires a linked slice issue, at least one checked
+acceptance criterion, a non-empty summary, an exact validation command and
+result, and completion of the impact/review checklist in the PR template.
+Branch-protection and required-status settings remain owner-managed. Run the
+equivalent local .NET commands from [AGENTS.md](../AGENTS.md).
 
 ## Test guidance
 
