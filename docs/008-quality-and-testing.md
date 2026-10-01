@@ -14,10 +14,13 @@ edited, synchronized, or reopened. It uses .NET SDK `10.0.400` and runs:
 4. Run the test suite.
 5. Validate the slice's PR contract with
    `.github/scripts/validate-pr-contract.mjs`.
+6. Review dependency changes and run CodeQL security analysis using
+   `.github/workflows/security-review.yml`.
 
-The PR contract check requires a linked slice issue, at least one checked
-acceptance criterion, a non-empty summary, an exact validation command and
-result, and completion of the impact/review checklist in the PR template.
+The PR contract check requires a linked slice issue and matching `Fixes #N`
+closing reference, at least one checked acceptance criterion, a non-empty
+summary, an exact validation command and result, and a completed impact/review
+checklist that records review status (including pending work) in the PR template.
 Branch-protection and required-status settings remain owner-managed. Run the
 equivalent local .NET commands from [AGENTS.md](../AGENTS.md).
 

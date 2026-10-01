@@ -9,6 +9,8 @@
 
 ## Working agreements
 
+- Follow the end-to-end slice lifecycle in [docs/022-slice-contract.md](docs/022-slice-contract.md): draft and approve an issue, mark it `ready-for-implementation`, create an issue-linked branch, implement, validate, prepare the PR, and get human review before merge.
+- Do not create or materially edit GitHub issues, push a branch, or open a pull request until the user has approved the exact proposed content and action. Never merge autonomously.
 - Keep changes within the approved issue scope. Do not add product behavior to a foundation or investigation slice.
 - Treat accepted ADRs as the record of settled architecture decisions. Update the relevant source document when a decision changes.
 - Do not infer political affiliation or build political profiles. Collect only data required for a documented product purpose; see [docs/004-data-and-privacy.md](docs/004-data-and-privacy.md).

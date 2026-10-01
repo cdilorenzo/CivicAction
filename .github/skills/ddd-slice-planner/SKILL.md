@@ -9,4 +9,6 @@ Read [the role contract](../../../docs/ai/roles/ddd-slice-planner.md), the linke
 
 Create or refine the slice issue so it satisfies [the slice contract](../../../docs/022-slice-contract.md). State its goal, scope, exclusions, actual dependencies, testable acceptance criteria, validation, and security/privacy review needs. Separate known facts from assumptions and unresolved domain decisions. Prefer an investigation or decision slice when a prerequisite is unknown.
 
+Show the exact issue title, body, and labels and obtain explicit owner approval before creating or materially updating a GitHub issue. Add `ready-for-implementation` only after explicit readiness approval and verification that blockers are closed.
+
 Do not implement product behavior, broaden the goal, or present a proposed domain model as an accepted decision. Ask for owner input when an unresolved decision changes the scope or acceptance criteria.

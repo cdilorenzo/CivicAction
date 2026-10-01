@@ -12,3 +12,16 @@ Before a feature requires production operation, its slice or ADR should define t
 - Operational ownership and incident response.
 
 Logs and telemetry must follow [004-data-and-privacy.md](004-data-and-privacy.md); do not include personal or political data by default.
+
+## Repository security checks
+
+Pull requests targeting `main` run CodeQL analysis for C# and GitHub Actions and
+dependency review for introduced dependency vulnerabilities. Dependency review
+fails on vulnerabilities rated low or higher; review the advisory and upgrade or
+document an explicitly approved exception rather than weakening the check.
+
+Secret scanning and push protection are GitHub repository settings, not workflow
+steps. They are currently enabled for CivicAction; repository owners should
+reconfirm them after ownership, plan, or repository-setting changes. Required
+status checks and branch protection are also owner-managed and must not be
+modified by pull-request workflows.
