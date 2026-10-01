@@ -56,7 +56,10 @@ export function validatePullRequestBody(body) {
 
   for (const label of requiredImpactChecks) {
     const escapedLabel = label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const checkPattern = new RegExp(`^\\s*-\\s*\\[([ xX])\\]\\s*${escapedLabel}\\s*$`, 'im');
+    const checkPattern = new RegExp(
+      `^\\s*-\\s*\\[([ xX])\\]\\s*${escapedLabel}(?:[ \\t]+.*)?[ \\t]*$`,
+      'im',
+    );
     const match = checkPattern.exec(impact);
 
     if (!match || match[1].toLowerCase() !== 'x') {

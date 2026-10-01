@@ -71,3 +71,12 @@ test('rejects unchecked impact review fields', () => {
     'Impact and review section must complete: "Known limitations and follow-up work are listed."',
   ]);
 });
+
+test('accepts checked impact review fields with explanatory text', () => {
+  const body = validPullRequestBody.replace(
+    '- [x] Documentation and ADRs updated where needed.',
+    '- [x] Documentation and ADRs updated where needed. Quality guidance changed; no ADR was needed.',
+  );
+
+  assert.deepEqual(validatePullRequestBody(body), []);
+});

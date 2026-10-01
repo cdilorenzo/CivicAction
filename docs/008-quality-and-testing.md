@@ -5,7 +5,7 @@
 The solution enables nullable reference types, .NET analyzers at `latest-recommended`, and warnings-as-errors. Preserve these settings and address warnings rather than suppressing them broadly.
 
 The deterministic CI baseline runs on pull requests targeting `main` when opened,
-synchronized, or reopened. It uses .NET SDK `10.0.400` and runs:
+edited, synchronized, or reopened. It uses .NET SDK `10.0.400` and runs:
 
 1. Restore the solution.
 2. Verify formatting with
