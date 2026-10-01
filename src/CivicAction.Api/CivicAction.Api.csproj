@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\CivicAction.Application\CivicAction.Application.csproj" />
+    <ProjectReference Include="..\CivicAction.Infrastructure\CivicAction.Infrastructure.csproj" />
+    <ProjectReference Include="..\CivicAction.Localization\CivicAction.Localization.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>

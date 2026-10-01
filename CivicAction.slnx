@@ -1,0 +1,18 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CivicAction.Api/CivicAction.Api.csproj" />
+    <Project Path="src/CivicAction.Application/CivicAction.Application.csproj" />
+    <Project Path="src/CivicAction.Domain/CivicAction.Domain.csproj" />
+    <Project Path="src/CivicAction.Infrastructure/CivicAction.Infrastructure.csproj" />
+    <Project Path="src/CivicAction.Localization/CivicAction.Localization.csproj" />
+    <Project Path="src/CivicAction.Web/CivicAction.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CivicAction.Api.Tests/CivicAction.Api.Tests.csproj" />
+    <Project Path="tests/CivicAction.Application.Tests/CivicAction.Application.Tests.csproj" />
+    <Project Path="tests/CivicAction.Domain.Tests/CivicAction.Domain.Tests.csproj" />
+    <Project Path="tests/CivicAction.Infrastructure.Tests/CivicAction.Infrastructure.Tests.csproj" />
+    <Project Path="tests/CivicAction.Localization.Tests/CivicAction.Localization.Tests.csproj" />
+    <Project Path="tests/CivicAction.Web.Tests/CivicAction.Web.Tests.csproj" />
+  </Folder>
+</Solution>
