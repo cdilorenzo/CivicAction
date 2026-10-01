@@ -24,6 +24,7 @@ This directory is the source of durable project context. Keep documents focused,
 - [022-slice-contract.md](022-slice-contract.md) defines issue-to-PR slice expectations.
 - [slices/](slices/) contains the slice template and workflow notes.
 - [ai/roles/](ai/roles/) contains role contracts for AI-assisted project work.
+- [../.github/skills/](../.github/skills/) exposes the role contracts as invokable Copilot Skills; [../.claude/commands/](../.claude/commands/) contains thin Claude Code command adapters.
 - [../AGENTS.md](../AGENTS.md) contains repository-wide contribution instructions.
 
 ## Editing rules
