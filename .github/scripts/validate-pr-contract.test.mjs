@@ -5,6 +5,7 @@ import { validatePullRequestBody } from './validate-pr-contract.mjs';
 const validPullRequestBody = `## Summary
 
 Added the CI workflow and PR contract validation.
+Fixes #14.
 
 ## Slice
 
@@ -19,7 +20,7 @@ Added the CI workflow and PR contract validation.
 ## Impact and review
 
 - [x] Documentation and ADRs updated where needed.
-- [x] Security/privacy impact considered; review completed where required.
+- [x] Security/privacy impact and required review status documented.
 - [x] Accessibility and localization considered for UI changes.
 - [x] Operational, migration, and compatibility impacts documented where relevant.
 - [x] Known limitations and follow-up work are listed.
@@ -46,7 +47,7 @@ test('reports missing issue, acceptance, summary, validation, and review details
 
 ## Impact and review
 
-- [ ] Security/privacy impact considered; review completed where required.
+- [ ] Security/privacy impact and required review status documented.
 `);
 
   assert.equal(errors.length, 9);
@@ -79,4 +80,29 @@ test('accepts checked impact review fields with explanatory text', () => {
   );
 
   assert.deepEqual(validatePullRequestBody(body), []);
+});
+
+test('accepts a documented pending security review status', () => {
+  const body = validPullRequestBody.replace(
+    '- [x] Security/privacy impact and required review status documented.',
+    '- [x] Security/privacy impact and required review status documented. Human review and hosted security checks are pending.',
+  );
+
+  assert.deepEqual(validatePullRequestBody(body), []);
+});
+
+test('requires a closing reference for the linked slice issue', () => {
+  const body = validPullRequestBody.replace('Fixes #14.', 'Related to #14.');
+
+  assert.deepEqual(validatePullRequestBody(body), [
+    'PR body must include "Fixes #14" to close the slice issue on merge.',
+  ]);
+});
+
+test('does not accept a closing reference to a different issue', () => {
+  const body = validPullRequestBody.replace('Fixes #14.', 'Fixes #15.');
+
+  assert.deepEqual(validatePullRequestBody(body), [
+    'PR body must include "Fixes #14" to close the slice issue on merge.',
+  ]);
 });

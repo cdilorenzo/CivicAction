@@ -4,7 +4,7 @@ import { pathToFileURL } from 'node:url';
 
 const requiredImpactChecks = [
   'Documentation and ADRs updated where needed.',
-  'Security/privacy impact considered; review completed where required.',
+  'Security/privacy impact and required review status documented.',
   'Accessibility and localization considered for UI changes.',
   'Operational, migration, and compatibility impacts documented where relevant.',
   'Known limitations and follow-up work are listed.',
@@ -28,8 +28,17 @@ export function validatePullRequestBody(body) {
   const validation = extractSection(body, 'Validation');
   const impact = extractSection(body, 'Impact and review');
 
-  if (!/#\d+|https:\/\/github\.com\/[^/\s)]+\/[^/\s)]+\/issues\/\d+/i.test(slice)) {
+  const sliceIssue = /^\s*-\s*Issue:\s*#(\d+)\s*$/im.exec(slice);
+  if (!sliceIssue) {
     errors.push('Slice section must link the slice issue (for example, #14).');
+  } else {
+    const closingReference = new RegExp(
+      `\\b(?:close[sd]?|fix(?:es|ed)?|resolve[sd]?)\\s+#${sliceIssue[1]}\\b`,
+      'i',
+    );
+    if (!closingReference.test(body)) {
+      errors.push(`PR body must include "Fixes #${sliceIssue[1]}" to close the slice issue on merge.`);
+    }
   }
 
   if (

@@ -30,8 +30,8 @@ What measurable outcome will this slice deliver?
 
 ## Specification
 
-- Link the approved specification or record the result of `/slice-bootstrap <ISSUE-NUMBER>`.
-- Record assumptions and unresolved decisions.
+- Link the approved specification or record the result of `/slice-bootstrap` with the new goal or issue number.
+- Record assumptions and unresolved decisions; approve the exact issue text before creating or materially updating the GitHub issue.
 
 ## Validation
 

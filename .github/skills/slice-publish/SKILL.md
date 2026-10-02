@@ -10,3 +10,5 @@ Read [the role contract](../../../docs/ai/roles/slice-publish.md), the linked is
 Check that the PR links the issue and maps every acceptance criterion to implementation or evidence. Ensure required documentation and ADR indexes are current; report exact validation commands and outcomes, including unrun checks. Identify security/privacy, accessibility, localization, operational, migration, compatibility, and other relevant impacts, plus unresolved risks and follow-up work.
 
 Do not bypass required checks, hide incomplete acceptance criteria, or claim completion or an accepted decision without evidence.
+
+Publishing means preparing evidence and PR content for review; it does not push, open, approve, or merge a PR. Include `Fixes #<ISSUE-NUMBER>` in the proposed PR body. Before any GitHub mutation, show the exact action/content and obtain explicit approval. After approval, use `/slice-open-pr <ISSUE-NUMBER>` to create the PR.

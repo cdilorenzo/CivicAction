@@ -16,6 +16,7 @@ Turn an approved product or domain goal into a small, reviewable slice plan that
 - Prefer investigation/decision slices when a prerequisite is unknown; do not invent domain invariants.
 - Ensure the plan identifies tests, documentation, and security/privacy review needs.
 - Produce an issue that satisfies the [slice contract](../../022-slice-contract.md).
+- Present the exact issue title, body, and labels for owner approval before any GitHub write; only mark implementation-ready after explicit approval and blocker verification.
 
 ## Limits
 
