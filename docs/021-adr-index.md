@@ -15,7 +15,7 @@ Architecture Decision Records (ADRs) capture decisions with lasting technical or
 
 | ADR | Title | Status |
 | --- | --- | --- |
-| [0001](adr/0001-participation-bounded-context-and-aggregate.md) | Participation bounded context and aggregate | Planned; decision pending |
+| [0001](adr/0001-participation-bounded-context-and-aggregate.md) | Participation bounded context and aggregate | Accepted |
 
 ## ADR template
 
