@@ -26,3 +26,43 @@ steps. They are currently enabled for CivicAction; repository owners should
 reconfirm them after ownership, plan, or repository-setting changes. Required
 status checks and branch protection are also owner-managed and must not be
 modified by pull-request workflows.
+
+## Advisory AI code review
+
+Pull requests the repository owner opens against `main` receive an automatic,
+advisory code review from GitHub Copilot's native code review feature. This is
+a GitHub platform capability configured through the owner's personal Copilot
+settings (`github.com` profile picture menu -> Copilot settings -> Code
+review); it is not a custom GitHub Actions workflow, and it introduces no new
+secret, credential, or external AI provider.
+
+Configuration:
+
+- **Automatic Copilot code review**: enabled, so every pull request the owner
+  authors against `main` is reviewed without a manual request.
+- **Review new pushes**: enabled, so each additional commit to an open pull
+  request receives an updated review.
+- **Review effort level**: `Balanced`. This is a built-in GitHub Copilot tier,
+  not a selectable model, that trades higher AI-credit cost for deeper
+  analysis of complex logic, security-sensitive code, and cross-service
+  changes; it consumes more AI credits than the `Lite` default.
+
+Copilot always posts its review as an advisory "Comment" review. It is never
+configured as a required status check and never blocks a merge; merge
+decisions remain with required human review.
+
+Cost and billing: each automatic review consumes AI credits attributed to the
+pull request author and billed against that author's Copilot plan (here, the
+repository owner's existing subscription). No new credential or billing
+account is introduced.
+
+Scope limitation: automatic review currently covers only pull requests the
+repository owner authors. It does not yet cover pull requests from other
+authors or forks; extending coverage would require a repository ruleset
+("Automatically request Copilot code review") whose availability on this
+repository's plan has not been verified, and is left to a future slice.
+
+To disable: turn off **Automatic Copilot code review** in the same Copilot
+settings page. Turning it off does not remove the ability to manually request
+a review (click **Request** next to Copilot under Reviewers on any pull
+request).
