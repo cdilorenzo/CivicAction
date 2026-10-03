@@ -17,7 +17,7 @@ The product must support privacy-safe participation measurement without politica
 
 ## Settled direction versus open decisions
 
-- The roadmap establishes `Participation` as a bounded context and `CivicAction` as its intended aggregate name. Aggregate invariants and boundaries are to be settled in the domain decision slice and recorded as an ADR.
+- The `Participation` bounded context and primary `CivicAction` aggregate are established by [ADR-0001](adr/0001-participation-bounded-context-and-aggregate.md). The ADR also records the separate `Circle` boundary and defers any user-level participation data decision.
 - The source-ingestion roadmap calls for a normalized `ICivicActionSource` boundary and begins with feasibility work for meinBerlin. No live source integration or source availability is implied by this plan.
 - Other details remain open until documented in an accepted ADR or product decision. In particular, do not invent persistence, ranking, identity, retention, or deployment requirements.
 

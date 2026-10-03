@@ -2,19 +2,23 @@
 
 ## Roadmap direction
 
-The Core Participation roadmap identifies `Participation` as a bounded context and `CivicAction` as the intended primary aggregate. The domain decision slice is responsible for establishing the ubiquitous language and the aggregate's invariants and boundaries before production domain behavior is added.
+The Core Participation roadmap identifies `Participation` as a bounded context and `CivicAction` as the intended primary aggregate. [ADR-0001](adr/0001-participation-bounded-context-and-aggregate.md) now establishes the ubiquitous language and aggregate boundaries before production domain behavior is added.
 
-The name alone is not a complete model. This document intentionally does not define fields, lifecycle states, identity rules, or invariants that have not been accepted.
+The accepted boundary and invariants are recorded in [ADR-0001](adr/0001-participation-bounded-context-and-aggregate.md). The name alone is not a complete model; this document does not define fields, lifecycle states, identity rules, or invariants beyond that decision.
 
 ## Modeling rules
 
 - Keep the domain language aligned with terms in [010-terms.md](010-terms.md).
-- Record domain decisions and their rationale in an accepted ADR, and link that ADR below.
+- Record lasting domain decisions and their rationale in an accepted ADR, and link that ADR below.
 - Treat imported source data as input to the domain, not as domain truth without an explicit rule.
 - Keep derived explanations, ranking data, and source-specific details outside the aggregate unless a domain decision establishes otherwise.
 
-## Decision record
+## Accepted boundaries
 
-- `ADR-0001` is reserved for the Participation bounded-context and aggregate-boundary decision. Add a link here when it is accepted.
+- `Participation` owns the product's civic-action domain concepts and official participation-route references. The actual participation service remains external.
+- `CivicAction` is the primary aggregate for a globally discoverable, externally sourced civic opportunity. This decision does not prescribe a complete field schema or lifecycle.
+- A `Circle` is a separate aggregate for private, invitation-based social coordination. It may reference/share an existing `CivicAction`, but cannot create, delete, or modify its content or status. Circle behavior is deferred beyond the initial ACT/SRC MVP.
+- Explanations and ranking are derived presentation data, not authoritative `CivicAction` state.
+- A person's participation completion is not Circle-owned state. Recording individual completion or producing activity summaries is not approved by ADR-0001 and requires a separate product and privacy decision before collection or implementation.
 
-Until that decision is accepted, implementation must follow an explicitly approved slice specification and must not create undocumented domain invariants.
+Do not introduce fields, lifecycle states, identity rules, persistence, or additional invariants unless an approved slice and, where relevant, an accepted ADR establish them.
