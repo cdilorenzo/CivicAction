@@ -57,11 +57,14 @@ preserve advisory-only behavior, and reconfirm this setting alongside the
 other owner-managed repository security settings above after any ownership,
 plan, or repository-setting change.
 
-Cost and billing: each automatic review has two components billed against the
-pull request author's Copilot plan (here, the repository owner's existing
-subscription): AI credits for the model interaction, and GitHub Actions
-minutes for the agentic capabilities (full-repository context gathering). No
-new credential or billing account is introduced.
+Cost and billing: each automatic review has two separately attributed
+components. AI credits for the model interaction are charged to the pull
+request author (the repository owner's existing Copilot plan); GitHub Actions
+minutes for the agentic capabilities (full-repository context gathering) are
+attributed to the repository, not to the author's Copilot plan. Because
+CivicAction is a public repository, standard GitHub-hosted Actions minutes are
+unmetered, so no Actions-minute cost applies today. No new credential or
+billing account is introduced.
 
 Scope limitation: automatic review currently covers only pull requests the
 repository owner authors. It does not yet cover pull requests from other
