@@ -45,16 +45,23 @@ Configuration:
 - **Review effort level**: `Balanced`. This is a built-in GitHub Copilot tier,
   not a selectable model, that trades higher AI-credit cost for deeper
   analysis of complex logic, security-sensitive code, and cross-service
-  changes; it consumes more AI credits than the `Lite` default.
+  changes; it consumes more AI credits than the `Lite` tier.
 
-Copilot always posts its review as an advisory "Comment" review. It is never
-configured as a required status check and never blocks a merge; merge
-decisions remain with required human review.
+By default, Copilot posts its review as an advisory "Comment" review, which
+does not count toward required approvals. GitHub also offers an opt-in,
+preview "Allow Copilot to approve pull requests" setting
+(repository Settings -> Copilot -> Code review -> Approvals) that would let a
+Copilot approval count toward merge requirements; it is currently **Off** for
+this repository, and no ruleset requires a Copilot review. Keep it Off to
+preserve advisory-only behavior, and reconfirm this setting alongside the
+other owner-managed repository security settings above after any ownership,
+plan, or repository-setting change.
 
-Cost and billing: each automatic review consumes AI credits attributed to the
-pull request author and billed against that author's Copilot plan (here, the
-repository owner's existing subscription). No new credential or billing
-account is introduced.
+Cost and billing: each automatic review has two components billed against the
+pull request author's Copilot plan (here, the repository owner's existing
+subscription): AI credits for the model interaction, and GitHub Actions
+minutes for the agentic capabilities (full-repository context gathering). No
+new credential or billing account is introduced.
 
 Scope limitation: automatic review currently covers only pull requests the
 repository owner authors. It does not yet cover pull requests from other
