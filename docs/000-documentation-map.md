@@ -17,6 +17,12 @@ This directory is the source of durable project context. Keep documents focused,
 | [009-operations.md](009-operations.md) | Operational decisions to document before production |
 | [010-terms.md](010-terms.md) | Shared project terminology |
 
+## Source investigations
+
+| Document | Purpose |
+| --- | --- |
+| [sources/meinberlin-feasibility.md](sources/meinberlin-feasibility.md) | meinBerlin access paths, conditions, data availability and recommendation (SRC-0) |
+
 ## Governance
 
 - [PROJECT-MEMORY.md](PROJECT-MEMORY.md) is the short contributor/assistant orientation.

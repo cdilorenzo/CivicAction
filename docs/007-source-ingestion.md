@@ -15,6 +15,8 @@ Before building a live connector, document:
 - Failure and update behavior, including source removals or corrections.
 - A viable alternative if no stable and permitted integration exists.
 
+The meinBerlin investigation (SRC-0) is recorded in [sources/meinberlin-feasibility.md](sources/meinberlin-feasibility.md), and its access decision in [ADR-0003](adr/0003-meinberlin-source-access-path.md).
+
 ## Connector expectations
 
 - Keep source-specific parsing and transport in an adapter behind the normalized source boundary.
