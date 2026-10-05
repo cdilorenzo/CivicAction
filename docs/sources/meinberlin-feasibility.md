@@ -198,7 +198,7 @@ Some initiators set end times to midnight (`T00:00:00`) and others to `T23:59:00
 | Text diskutieren | `TR` | Document chapters with `data-a4-widget="comment_async"` | 3 | 1 | 1 [inf] |
 | Interaktive Veranstaltung | `IE` | `data-ie-widget="questions"` | 1 | 0 | 0 |
 | Priorisierung mit Karte | `MTP` | `data-mb-widget="map-topics"` | 0 | 0 | 1 [inf] |
-| Veranstaltung (offline event) | `OE` | No widget; "Veranstaltungsart" and "Datum" text | — | — | 37 in total (32 in running projects, 5 in upcoming projects) |
+| Veranstaltung (offline event) | `OE` | No widget; "Veranstaltungsart" and "Datum" text | 0 (never running) | 37 in total, not split by event date (32 in running projects, 5 in upcoming projects) | |
 | Bebauungsplan (development plan) | `BP` | None; redirects to Diplan | 1 running (from the API, `subtype` `external`) | | |
 | Bürger*innenhaushalt (1 or 2 phases), Priorisierung, Kiezkasse (legacy) | `PB`, `PB2`, `TP`, `KK` | `proposals`/`support`, `topics`, `kiezkasse-proposals` | Defined in code, not found in the sample | | |
 | Verlinkung (external project) | `EP` | Redirects to an external site | Only in `/api/extprojects/` (not recommended) | | |
