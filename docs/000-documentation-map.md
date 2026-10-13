@@ -23,6 +23,12 @@ This directory is the source of durable project context. Keep documents focused,
 | --- | --- |
 | [sources/meinberlin-feasibility.md](sources/meinberlin-feasibility.md) | meinBerlin access paths, conditions, data availability and recommendation (SRC-0) |
 
+## Reuse assessments
+
+| Document | Purpose |
+| --- | --- |
+| [reuse/tuwasgutes-reuse-matrix.md](reuse/tuwasgutes-reuse-matrix.md) | TuWasGutes components assessed for sharing, adaptation or local ownership, with pattern learnings (REUSE-0, [ADR-0002](adr/0002-shared-components-repository.md)) |
+
 ## Governance
 
 - [PROJECT-MEMORY.md](PROJECT-MEMORY.md) is the short contributor/assistant orientation.
