@@ -19,6 +19,7 @@ The product must support privacy-safe participation measurement without politica
 
 - The `Participation` bounded context and primary `CivicAction` aggregate are established by [ADR-0001](adr/0001-participation-bounded-context-and-aggregate.md). The ADR also records the separate `Circle` boundary and defers any user-level participation data decision.
 - The source-ingestion roadmap calls for a normalized `ICivicActionSource` boundary. [ADR-0003](adr/0003-meinberlin-source-access-path.md) establishes the meinBerlin access path (public project-list JSON endpoints, project granularity, no HTML parsing). Live polling and display stay blocked until the operator clarifies the usage rights; no live source integration exists yet.
+- [ADR-0002](adr/0002-shared-components-repository.md) records that product-independent technical building blocks are shared with TuWasGutes only as exactly pinned NuGet packages from `cdilorenzo/BuildingBlocks`. There is no shared domain or data and no reference to TuWasGutes, and `CivicAction.Domain` takes no shared package. The rules are in [002-architecture.md](002-architecture.md#shared-building-blocks).
 - Other details remain open until documented in an accepted ADR or product decision. In particular, do not invent persistence, ranking, identity, retention, or deployment requirements.
 
 ## Source-of-truth order

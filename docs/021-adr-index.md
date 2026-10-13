@@ -16,6 +16,7 @@ Architecture Decision Records (ADRs) capture decisions with lasting technical or
 | ADR | Title | Status |
 | --- | --- | --- |
 | [0001](adr/0001-participation-bounded-context-and-aggregate.md) | Participation bounded context and aggregate | Accepted |
+| [0002](adr/0002-shared-components-repository.md) | Shared components repository | Accepted |
 | [0003](adr/0003-meinberlin-source-access-path.md) | meinBerlin source access path | Accepted |
 
 ## ADR template
@@ -40,5 +41,3 @@ What improves, what becomes harder, and what follow-up is required?
 ## Alternatives considered
 Which reasonable alternatives were considered and why were they not selected?
 ```
-
-ADR 0001 is a placeholder, not an accepted decision. Replace its pending sections with the decision slice's outcome and update its status when the decision is accepted.
